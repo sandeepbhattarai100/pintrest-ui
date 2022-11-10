@@ -1,38 +1,174 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  min-width: 100vw;
   min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fefffe;
+  display: flex;
+  overflow-x: hidden;
+  padding: 0px 40px;
+}
+.MenuContainer{
+  width: 100px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 30px;
+  position: fixed;
+}
+.subContainer{
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.logo{
+  width: 70px;
+  min-width: 40px;
+}
+.iconContainer{
+  width: 50px;
+  min-width: 40px;
+  height: 50px;
+  border: 2px solid #717273;
+  border-radius: 40%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0px 5px 20px rgb(0, 0, 0, 0.15);
+  margin:15px 0;
+
 }
 
-.App-link {
-  color: #61dafb;
+.iconContainer:hover,
+.iconContainer.active{
+  background-color:rgb(79, 77, 77);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.MuiSvgIcon-root{
+  color: #313233; 
+}
+.iconContainer:hover .MuiSvgIcon-root,
+.iconContainer.active .MuiSvgIcon-root{
+  color: aliceblue;
+  transition: 0.5s;
+}
+
+main{
+  flex: 1;
+  height: 100%;
+  margin-left: 130px;
+
+
+}
+.SearchBox{
+ width: 100%;
+ background-color: #fefffe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  padding: 5px 10px;
+  border:2px solid #717273;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.20);
+}
+.SearchBox input{
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-weight: bold;
+padding: 10px;
+color: #717273;
+}
+input{
+  font-size: 18PX;
+}
+
+.icon{
+  width: 50px;
+  min-width: 40px;
+  height: 50px;
+  border: 2px solid #717273;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.15);
+  background-color: #313233;
+  cursor: pointer;
+}
+.icon:hover{
+  box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.5);
+  background-color: rgb(133, 3, 3);
+}
+.icon .MuiSvgIcon-root{
+  color: #fefffe;
+}
+.MainContainer{
+  flex: 1;
+  height: auto;
+  margin: 30px;
+ 
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,250px);
+  grid-auto-rows: 10px;
+  box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.5);
+  border-radius: 5px;
+  justify-content: center;
+ 
+  
+}
+.pin{
+  border-radius: 15px;
+  background-color: black;
+  margin: 5px;
+  position: relative;
+  overflow: hidden;
+
+}
+.pin .Picture{
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+
+}
+.pin .content{
+  height: 50px;
+  width: 100%;
+  background-color: rgb(255, 255, 255, 0.15);
+  position: absolute;
+  bottom: -55px;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px;
+}
+.pin:hover .content{
+  bottom: 3px;
+  transition: 0.4s;
+}
+.pin .content h3{
+  color: #fefffe;
+  font-size: 18px;
+  font-weight: 500;
+}
+.pin .content .icon{
+  background-color: #fb3975 !important;
+}
+.pin.small{
+  grid-row-end: span 26;
+}
+.pin.medium{
+  grid-row-end: span 35;
+}
+.pin.large{
+  grid-row-end: span 45;
 }
